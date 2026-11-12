@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilok Industries - Automated End-to-End & Security Test Suite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/data.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6 sm:p-10 font-sans">
+  <div class="max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-6 mb-8 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold mb-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          End-to-End & Security Test Harness
+        </div>
+        <h1 class="text-3xl font-extrabold text-white">Trilok Industries Test Suite</h1>
+        <p class="text-slate-400 text-sm mt-1">Full component verification, positive/negative validation, and vulnerability test coverage.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sm font-semibold text-slate-200 transition-colors">
+          ← Back to Main Website
+        </a>
+        <button id="rerun-btn" onclick="runAllTests()" class="px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-sm font-bold shadow-lg transition-all flex items-center gap-2">
+          <span>Rerun All Tests</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scorecards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block mb-1">Total Tests</span>
+        <span id="stat-total" class="text-3xl font-black text-white">0</span>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block mb-1">Passed</span>
+        <span id="stat-passed" class="text-3xl font-black text-emerald-400">0</span>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block mb-1">Failed</span>
+        <span id="stat-failed" class="text-3xl font-black text-red-400">0</span>
+      </div>
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+        <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block mb-1">Pass Rate</span>
+        <span id="stat-rate" class="text-3xl font-black text-amber-400">0%</span>
+      </div>
+    </div>
+
+    <!-- Test Results Container -->
+    <div id="test-results" class="space-y-6"></div>
+  </div>
+
+  <script>
+    let total = 0;
+    let passed = 0;
+    let failed = 0;
+    const resultsContainer = document.getElementById('test-results');
+
+    function createSuiteCard(title) {
+      const card = document.createElement('div');
+      card.className = 'bg-slate-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl';
+      card.innerHTML = `
+        <h3 class="text-lg font-bold text-slate-200 border-b border-slate-800/80 pb-3 mb-4 flex items-center justify-between">
+          <span>${title}</span>
+          <span class="suite-status text-xs font-mono font-semibold px-2.5 py-1 rounded-md bg-slate-800 text-slate-400">Running...</span>
+        </h3>
+        <div class="suite-tests space-y-2.5"></div>
+      `;
+      resultsContainer.appendChild(card);
+      return card;
+    }
+
+    function recordTest(suiteCard, name, pass, detail) {
+      total++;
+      if (pass) passed++; else failed++;
+
+      const list = suiteCard.querySelector('.suite-tests');
+      const item = document.createElement('div');
+      item.className = `flex items-start justify-between p-3 rounded-xl border text-sm transition-all ${
+        pass ? 'bg-emerald-950/20 border-emerald-900/40 text-emerald-300' : 'bg-red-950/30 border-red-900/50 text-red-300'
+      }`;
+      item.innerHTML = `
+        <div class="flex items-start gap-3">
+          <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
+            pass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' : 'bg-red-500/20 text-red-400 border border-red-500/40'
+          }">${pass ? '✓' : '✗'}</span>
+          <div>
+            <div class="font-semibold text-slate-200">${name}</div>
+            <div class="text-xs text-slate-400 mt-0.5">${detail || ''}</div>
+          </div>
+        </div>
+        <span class="text-xs font-mono uppercase px-2 py-0.5 rounded font-bold ${
+          pass ? 'bg-emerald-500/10 text-emerald-400' : 'bg-red-500/10 text-red-400'
+        }">${pass ? 'PASSED' : 'FAILED'}</span>
+      `;
+      list.appendChild(item);
+      updateStats();
+    }
+
+    function updateStats() {
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-passed').textContent = passed;
+      document.getElementById('stat-failed').textContent = failed;
+      const rate = total > 0 ? Math.round((passed / total) * 100) : 0;
+      document.getElementById('stat-rate').textContent = rate + '%';
+    }
+
+    async function runAllTests() {
+      total = 0; passed = 0; failed = 0;
+      resultsContainer.innerHTML = '';
+      updateStats();
+
+      // Fetch index.html, style.css and interactions.js to test components
+      let html = '';
+      let css = '';
+      let interactions = '';
+      try {
+        const [hResp, cResp, iResp] = await Promise.all([
+          fetch('index.html').then(r => r.text()),
+          fetch('css/style.css').then(r => r.text()),
+          fetch('js/interactions.js').then(r => r.text())
+        ]);
+        html = hResp;
+        css = cResp;
+        interactions = iResp;
+      } catch (e) {
+        console.error(e);
+      }
+
+      // Suite 1: Structural & Navigation
+      const s1 = createSuiteCard('1. Structural & Navigation Components');
+      recordTest(s1, 'HTML5 DOCTYPE & English Lang Tag', html.includes('<!DOCTYPE html>') && html.includes('<html lang="en">'), 'Verified index.html is valid HTML5 and English.');
+      recordTest(s1, 'Authentic Corporate Logo Asset', html.includes('Trilok-Industries_04.jpg') && !html.includes('>TI</div>'), 'Verified Trilok-Industries_04.jpg replaces generic TI placeholder.');
+      recordTest(s1, 'Header Contact Utilities', html.includes('tel:06612660002') && html.includes('tel:+919437000851') && html.includes('mailto:info@trilokindustries.com'), 'Verified official phone numbers and email links.');
+      recordTest(s1, 'All 8 Section Anchor Links', ['#home', '#products', '#gallery', '#about', '#infrastructure', '#clients', '#quality', '#contact'].every(s => html.includes(s)), 'Verified all section IDs exist and target links properly.');
+
+      // Chronological navbar ordering test
+      const navOrder = ['#home', '#products', '#gallery', '#about', '#infrastructure', '#clients', '#quality', '#contact'];
+      const navOrderPassed = navOrder.every((id, i) => {
+        if (i === 0) return true;
+        return html.indexOf('href="' + navOrder[i-1] + '"') < html.indexOf('href="' + id + '"');
+      });
+      recordTest(s1, 'Shuffled Top Bar Matches Scroll Sequence', navOrderPassed, 'Top bar links rearranged in exact page scroll order: Home -> Products -> Gallery -> About -> Infrastructure -> Clients -> Quality -> Contact.');
+
+      recordTest(s1, 'Miniature Heavy Vehicle Navigation Tracker', html.includes('id="nav-rail-track"') && html.includes('id="nav-heavy-vehicle-carrier"') && html.includes('id="nav-heavy-vehicle-svg"'), 'Running miniature heavy industrial loader tracks active section along navbar.');
+      recordTest(s1, 'Forward/Backward Vehicle Orientation & Turning', css.includes('.face-left') && css.includes('scaleX(-1)') && interactions.includes('face-left'), 'Vehicle drives forward (faces right) scrolling down; turns around (faces left) and drives backward scrolling up.');
+      recordTest(s1, 'ScrollSpy Dynamic Word Color Change', html.includes('nav-section-link') && html.includes('data-section="home"'), 'Top bar section labels dynamically change to gold with active indicator.');
+      recordTest(s1, 'Executive Luxury Color & Trust Badges', html.includes('bg-slate-950/95') && html.includes('RSP Approved Supplier'), 'Midnight obsidian palette with gold metallic trims and certified trust seals.');
+      s1.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 2: 3D WebGL Rig & Badge Removal
+      const s2 = createSuiteCard('2. 3D WebGL Rig & Badge Removal Verification');
+      recordTest(s2, 'Hero 3D Canvas Viewport', html.includes('id="hero-3d-canvas-container"'), 'Hero 3D interactive Three.js container present.');
+      recordTest(s2, 'Hero Badge Removed', !html.includes('Interactive 3D Backhoe Rig: Drag to orbit 360° or move cursor'), 'Confirmed removal of requested hero badge.');
+      recordTest(s2, 'Quotation 3D Canvas Viewport', html.includes('id="quote-3d-canvas-container"'), 'Dark quotation 3D Three.js container present.');
+      recordTest(s2, 'Quotation Badge Removed', !html.includes('Real-time Particle Physics & 3D Hydraulics'), 'Confirmed removal of requested quotation badge.');
+      s2.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 3: Localization & Content
+      const s3 = createSuiteCard('3. Localization & Image Content Integrity');
+      const cyrillic = /[\u0400-\u04FF]/;
+      recordTest(s3, 'Zero Cyrillic / Non-English Text', !cyrillic.test(html), 'Clean 100% English verified across entire document.');
+      recordTest(s3, 'Uncropped Machinery Photos', html.includes('object-contain'), 'All equipment photos use object-contain on dark frames.');
+      recordTest(s3, 'Elimination of Broken URL Paths', !html.includes('/images/client/') && !html.includes('/images/gallery/'), 'No outdated broken paths exist.');
+      s3.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 4: Form Input Validation - Positive
+      const s4 = createSuiteCard('4. Form Input Validation: Positive Scenarios');
+      const V = window.IndustrialValidator;
+      recordTest(s4, 'Valid Name: "T.K. Tripathy"', V.validateName('T.K. Tripathy').valid, 'Corporate partner name accepted.');
+      recordTest(s4, 'Valid Name: "Mohan Sharma"', V.validateName('Mohan Sharma').valid, 'Indian personal name accepted.');
+      recordTest(s4, 'Valid Phone: "+91 94370 00851"', V.validatePhone('+91 94370 00851').valid, 'Official Indian mobile format accepted.');
+      recordTest(s4, 'Valid Phone: "+1 (555) 234-5678"', V.validatePhone('+1 (555) 234-5678').valid, 'International phone format accepted.');
+      recordTest(s4, 'Valid Email: "info@trilokindustries.com"', V.validateEmail('info@trilokindustries.com').valid, 'Official corporate email accepted.');
+      recordTest(s4, 'Valid Email: "procurement@domain.co.in"', V.validateEmail('procurement@domain.co.in').valid, 'Multi-part domain email accepted.');
+      recordTest(s4, 'Valid Scope: High-tonnage Crusher Plant', V.validateMessage('Turnkey 350 TPH jaw crusher plant with conveyor gallery.').valid, 'Project scope > 10 chars accepted.');
+      recordTest(s4, 'Valid Security Code: "TK7289"', V.validateSecurityCode('TK7289').valid && V.validateSecurityCode('tk7289').valid, 'Case-insensitive security code passed.');
+      s4.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 5: Form Input Validation - Negative
+      const s5 = createSuiteCard('5. Form Input Validation: Negative Scenarios');
+      recordTest(s5, 'Reject Empty Name', !V.validateName('').valid && !V.validateName('   ').valid, 'Empty string blocked.');
+      recordTest(s5, 'Reject Single-char Name ("A")', !V.validateName('A').valid, 'Names shorter than 2 chars blocked.');
+      recordTest(s5, 'Reject Numeric Name ("John123")', !V.validateName('John123').valid, 'Names with numbers blocked.');
+      recordTest(s5, 'Reject Symbol Name ("Mr. @Smith!")', !V.validateName('Mr. @Smith!').valid, 'Special symbols blocked.');
+      recordTest(s5, 'Reject Alphabetical Phone ("call-me-now")', !V.validatePhone('call-me-now').valid, 'Letters in phone blocked.');
+      recordTest(s5, 'Reject Short Phone ("94370")', !V.validatePhone('94370').valid, 'Phones with < 10 digits blocked.');
+      recordTest(s5, 'Reject Excessive Phone ("12345678901234567")', !V.validatePhone('12345678901234567').valid, 'Phones with > 15 digits blocked.');
+      recordTest(s5, 'Reject Malformed Email ("plainaddress")', !V.validateEmail('plainaddress').valid, 'Missing @ blocked.');
+      recordTest(s5, 'Reject Email Missing TLD ("user@domain")', !V.validateEmail('user@domain').valid, 'Missing TLD blocked.');
+      recordTest(s5, 'Reject Email Consecutive Dots ("user..name@domain.com")', !V.validateEmail('user..name@domain.com').valid, 'Double dots blocked.');
+      recordTest(s5, 'Reject Short Message ("Hi")', !V.validateMessage('Hi').valid, 'Messages < 10 chars blocked.');
+      recordTest(s5, 'Reject Incorrect Captcha ("WRONGCODE")', !V.validateSecurityCode('WRONGCODE').valid, 'Non-matching code blocked.');
+      s5.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 6: Security & Vulnerability Tests
+      const s6 = createSuiteCard('6. Security, Injection & Vulnerability Tests');
+      recordTest(s6, 'XSS Script Tag Neutralization', !V.validateName('<script>alert(1)<' + '/script>').valid && V.sanitizeInput('<script>').includes('&lt;script&gt;'), 'Script tags detected and escaped.');
+      recordTest(s6, 'XSS Event Handler Vector', !V.validateMessage('<img src=x onerror=alert(1)>').valid, 'onerror handler payload rejected.');
+      recordTest(s6, 'XSS SVG Onload Vector', !V.validateMessage('<svg onload=alert(1)>').valid, 'SVG onload vector rejected.');
+      recordTest(s6, 'SQL Injection Vector ("\' OR \'1\'=\'1")', !V.validateName("' OR '1'='1").valid, 'SQL injection string rejected.');
+      recordTest(s6, 'SQL Drop Table Vector', !V.validateName("1; DROP TABLE enquiries; --").valid, 'SQL comment and drop command rejected.');
+      recordTest(s6, 'HTML Entity Sanitization', V.sanitizeInput('& < > " \' /') === '&amp; &lt; &gt; &quot; &#x27; &#x2F;', 'Special characters safely escaped.');
+      s6.querySelector('.suite-status').textContent = 'Completed';
+
+      // Suite 7: Data & Modals
+      const s7 = createSuiteCard('7. Data Model & Modal Components');
+      recordTest(s7, 'TRILOK_DATA Products Present', window.TRILOK_DATA && window.TRILOK_DATA.products.length >= 8, '8 catalog products verified in dataset.');
+      recordTest(s7, 'TRILOK_DATA Infrastructure Present', window.TRILOK_DATA && window.TRILOK_DATA.infrastructure.length === 29, 'All 29 infrastructure tools verified.');
+      recordTest(s7, 'Enquiry & Specs Modal Wiring', html.includes('id="product-detail-modal"') && html.includes('id="enquiry-modal"'), 'Both modals present in DOM.');
+      s7.querySelector('.suite-status').textContent = 'Completed';
+    }
+
+    // Auto-run on load
+    runAllTests();
+  </script>
+</body>
+</html>

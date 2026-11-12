@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M/s. Trilok Industries | Mechanical Engineers & Fabricators | Estd. 1980</title>
+  <meta name="description" content="Turnkey crusher plants, heavy industrial hoists & cranes, pollution control ESP systems, conveyor drums, and precision heavy machining. Member DSSIA Rourkela.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706'
+            },
+            slate: {
+              850: '#151e2e',
+              900: '#0f172a',
+              950: '#080d1a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-amber-400 selection:text-slate-950">
+
+  <!-- Interactive Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Top Utilities Header -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-amber-500/20 shadow-inner">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-[11px]">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i>
+          Estd. 1980 | DSSIA Member (Rourkela Chapter) | RSP Approved Supplier
+        </span>
+        <span class="hidden md:inline-block text-slate-500">•</span>
+        <span class="hidden md:inline-block text-slate-400">Reg. No. 392 of 1996 | ISO 9001:2015 Standards</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="tel:06612660002" class="hover:text-amber-400 transition-colors flex items-center gap-1 font-medium">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-500"></i> 0661-2660002
+        </a>
+        <a href="tel:+919437000851" class="hover:text-amber-400 transition-colors flex items-center gap-1 font-medium">
+          <i data-lucide="smartphone" class="w-3.5 h-3.5 text-amber-500"></i> +91 94370 00851
+        </a>
+        <a href="mailto:info@trilokindustries.com" class="hidden sm:flex hover:text-amber-400 transition-colors items-center gap-1 font-medium">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-500"></i> info@trilokindustries.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar with Running Miniature Heavy Vehicle Tracker -->
+  <header id="main-header" class="sticky top-0 z-40 bg-slate-950/95 backdrop-blur-md border-b border-amber-500/25 shadow-xl transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Authentic Logo Branding in Premium White/Gold Capsule -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="p-1 bg-white rounded-xl shadow-md border border-amber-400/40 group-hover:border-amber-400 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.35)] transition-all">
+          <img src="https://www.trilokindustries.com/images/Trilok-Industries_04.jpg" 
+               alt="Trilok Industries - Mechanical Engineers & Fabricators" 
+               class="h-11 sm:h-12 w-auto object-contain">
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links with Heavy Vehicle Tracker -->
+      <div class="hidden lg:flex flex-col items-center relative">
+        <nav id="desktop-nav" class="flex items-center gap-1.5 text-sm font-semibold text-slate-300 relative pb-2.5 pt-1">
+          <!-- Rail Track Line -->
+          <div id="nav-rail-track" class="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"></div>
+          
+          <!-- Running Mini Heavy Vehicle Carrier -->
+          <div id="nav-heavy-vehicle-carrier" class="absolute -bottom-2 left-0 pointer-events-none transition-all duration-500 ease-out z-20">
+            <!-- Vehicle SVG with rolling wheels and animated beacon -->
+            <div id="nav-vehicle-wrapper" class="relative transition-transform duration-300">
+              <svg id="nav-heavy-vehicle-svg" class="w-9 h-6 filter drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]" viewBox="0 0 36 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Tiny blinking red/amber warning beacon on top -->
+                <circle cx="9" cy="2" r="1.2" fill="#ef4444" class="vehicle-beacon-pulse" />
+                <rect x="8.3" y="2.5" width="1.4" height="2" fill="#334155" />
+
+                <!-- Heavy Exhaust Stack -->
+                <rect x="5.5" y="3.5" width="1.5" height="4.5" rx="0.5" fill="#1e293b" />
+                
+                <!-- Operator Cabin with Steel Frame & Cyan Tinted Glass -->
+                <path d="M7 5H15L18 11H7V5Z" fill="#0f172a" stroke="#334155" stroke-width="0.6" />
+                <path d="M8.5 6.2H14.2L16.8 10.5H8.5V6.2Z" fill="#38bdf8" fill-opacity="0.75" />
+                
+                <!-- Counterweight & Engine Hood -->
+                <path d="M2 9.5H7V14H2.5C1.8 14 1.2 13.4 1.2 12.6V10.8C1.2 10.1 1.8 9.5 2.5 9.5Z" fill="#d97706" />
+                
+                <!-- Heavy Yellow Chassis Body -->
+                <rect x="6" y="10.5" width="16" height="3.8" rx="0.8" fill="#f59e0b" stroke="#b45309" stroke-width="0.5" />
+                
+                <!-- Dual Lift Arms & Hydraulic Ram -->
+                <path d="M17 11.5L25 9.2L28 14.5H24.5L22 12.5H17V11.5Z" fill="#92400e" />
+                <line x1="18" y1="13.2" x2="23" y2="10.5" stroke="#f1f5f9" stroke-width="0.8" />
+                
+                <!-- Heavy Front Scoop Bucket with Digging Teeth -->
+                <path d="M25.5 8L31 9.5L32 15.5L27 15.5L24.8 11.2L25.5 8Z" fill="#f59e0b" stroke="#78350f" stroke-width="0.6" />
+                <polygon points="32,11.5 33.8,12.5 32,13.5" fill="#fef08a" />
+                <polygon points="32,13.5 33.8,14.5 32,15.5" fill="#fef08a" />
+
+                <!-- Headlight beam spotlight projecting forward -->
+                <polygon points="28,11 36,7 36,15" fill="#fef08a" fill-opacity="0.35" class="headlight-beam" />
+
+                <!-- Rear Heavy Industrial Wheel -->
+                <g class="wheel wheel-rear">
+                  <circle cx="7" cy="15.5" r="3.6" fill="#090d16" stroke="#475569" stroke-width="0.8" />
+                  <circle cx="7" cy="15.5" r="1.7" fill="#f59e0b" />
+                  <circle cx="7" cy="15.5" r="0.6" fill="#090d16" />
+                  <line x1="7" y1="12.5" x2="7" y2="18.5" stroke="#1e293b" stroke-width="0.7" />
+                  <line x1="4" y1="15.5" x2="10" y2="15.5" stroke="#1e293b" stroke-width="0.7" />
+                </g>
+
+                <!-- Front Heavy Industrial Wheel -->
+                <g class="wheel wheel-front">
+                  <circle cx="21" cy="15.5" r="3.6" fill="#090d16" stroke="#475569" stroke-width="0.8" />
+                  <circle cx="21" cy="15.5" r="1.7" fill="#f59e0b" />
+                  <circle cx="21" cy="15.5" r="0.6" fill="#090d16" />
+                  <line x1="21" y1="12.5" x2="21" y2="18.5" stroke="#1e293b" stroke-width="0.7" />
+                  <line x1="18" y1="15.5" x2="24" y2="15.5" stroke="#1e293b" stroke-width="0.7" />
+                </g>
+              </svg>
+              <!-- Underbody ambient golden track glow -->
+              <div class="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-8 h-1.5 bg-amber-400/50 blur-[2px] rounded-full"></div>
+            </div>
+          </div>
+
+          <!-- Section Links with data-section (Arranged in exact top-to-bottom scroll order) -->
+          <a href="#home" class="nav-section-link active px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="home">Home</a>
+          <a href="#products" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="products">Products</a>
+          <a href="#gallery" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="gallery">Gallery</a>
+          <a href="#about" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="about">About Us</a>
+          <a href="#infrastructure" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="infrastructure">Infrastructure</a>
+          <a href="#clients" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="clients">Clients</a>
+          <a href="#quality" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="quality">Quality</a>
+          <a href="#contact" class="nav-section-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-amber-400 transition-all duration-200" data-section="contact">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <button class="open-enquiry-modal btn-yellow btn-magnetic px-5 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 shadow-[0_4px_16px_rgba(245,158,11,0.4)] hover:shadow-[0_6px_22px_rgba(245,158,11,0.6)]">
+          <span>Quick Enquiry</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION (100% English & Refined 3D Model with 90° Wheels) -->
+  <!-- ========================================================================= -->
+  <section id="home" class="relative bg-gradient-to-b from-slate-50 to-white pt-10 pb-28 overflow-hidden">
+    <!-- Background Grid -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-70 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-5 text-left pt-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold uppercase tracking-wider mb-5">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            Turnkey Heavy Engineering & Industrial Fabrication
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-6 font-display">
+            Heavy Engineering & Turnkey Plants For Any Scale
+          </h1>
+          <p class="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed max-w-lg">
+            Turnkey Crusher Plants, Heavy Hoists, Cranes, Electrostatic Precipitators (ESP) & precision machined assemblies fabricated to exacting industrial standards.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <button class="open-enquiry-modal btn-yellow btn-magnetic px-8 py-3.5 rounded-xl text-base font-bold shadow-lg flex items-center gap-2">
+              <span>REQUEST PROJECT QUOTE</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+            <a href="#products" class="px-6 py-3.5 rounded-xl text-base font-bold text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors flex items-center gap-2">
+              <span>Explore Catalog</span>
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="mt-10 flex items-center gap-6 border-t border-slate-200 pt-6">
+            <div>
+              <div class="text-2xl font-black text-slate-900 font-display">44+ Years</div>
+              <div class="text-xs text-slate-500 uppercase tracking-wide">Estd. 1980</div>
+            </div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div>
+              <div class="text-2xl font-black text-slate-900 font-display">28+ Units</div>
+              <div class="text-xs text-slate-500 uppercase tracking-wide">Heavy Machine Tools</div>
+            </div>
+            <div class="h-8 w-px bg-slate-200"></div>
+            <div>
+              <div class="text-2xl font-black text-slate-900 font-display">100%</div>
+              <div class="text-xs text-slate-500 uppercase tracking-wide">DSSIA & RSP Certified</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Interactive Model Viewport -->
+        <div class="lg:col-span-7 relative">
+          <div id="hero-3d-canvas-container" class="w-full h-[460px] sm:h-[520px] rounded-2xl relative cursor-grab active:cursor-grabbing">
+            <!-- 3D Canvas inserted by Three.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Floating Category Cards Overlapping Hero (Matching Screenshot) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <!-- Card 1 (Active) -->
+        <div class="hero-category-card active card-3d p-6 rounded-2xl cursor-pointer">
+          <div class="card-icon mb-4">
+            <i data-lucide="cog" class="w-8 h-8"></i>
+          </div>
+          <h3 class="card-title text-lg font-bold mb-1">Turn-Key Plants</h3>
+          <p class="text-xs text-slate-400 mb-4 line-clamp-2">Complete 100-500 TPH Crusher Plants, vibrating screens & bulk material sizing.</p>
+          <a href="#products" class="card-link text-xs font-bold flex items-center gap-1">
+            <span>Explore Specifications</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="hero-category-card card-3d p-6 rounded-2xl cursor-pointer">
+          <div class="card-icon text-amber-500 mb-4">
+            <i data-lucide="construction" class="w-8 h-8"></i>
+          </div>
+          <h3 class="card-title text-slate-900 text-lg font-bold mb-1">Hoists & Cranes</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">Heavy EOT cranes, 14MT/8MT Hydra Cranes, wire rope hoists & winch gear.</p>
+          <a href="#products" class="card-link text-slate-900 text-xs font-bold flex items-center gap-1">
+            <span>Explore Specifications</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="hero-category-card card-3d p-6 rounded-2xl cursor-pointer">
+          <div class="card-icon text-amber-500 mb-4">
+            <i data-lucide="wind" class="w-8 h-8"></i>
+          </div>
+          <h3 class="card-title text-slate-900 text-lg font-bold mb-1">Pollution & ESP</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">ESP chimneys, high-temp duct piping, multi-cyclone collectors & scrubbers.</p>
+          <a href="#products" class="card-link text-slate-900 text-xs font-bold flex items-center gap-1">
+            <span>Explore Specifications</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="hero-category-card card-3d p-6 rounded-2xl cursor-pointer">
+          <div class="card-icon text-amber-500 mb-4">
+            <i data-lucide="wrench" class="w-8 h-8"></i>
+          </div>
+          <h3 class="card-title text-slate-900 text-lg font-bold mb-1">Heavy Machining</h3>
+          <p class="text-xs text-slate-500 mb-4 line-clamp-2">20ft Planer, 16ft Lathes: large shafts, bushes, couplings, columns & foundation rails.</p>
+          <a href="#products" class="card-link text-slate-900 text-xs font-bold flex items-center gap-1">
+            <span>Explore Specifications</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 2. CATALOG SECTION (With 3D Viewports & Authentic Site Photos) -->
+  <!-- ========================================================================= -->
+  <section id="products" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header with Golden Brackets [ ] -->
+      <div class="text-center max-w-2xl mx-auto mb-16 relative">
+        <div class="inline-block relative">
+          <div class="bracket-frame px-8 py-3">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display">Machinery & Equipment Catalog</h2>
+          </div>
+        </div>
+        <p class="text-slate-500 mt-4 text-sm sm:text-base">
+          Heavy equipment, machinery & engineered fabrication produced directly at our Kalunga industrial works.
+        </p>
+      </div>
+
+      <!-- 8 Equipment Cards Grid (2 rows x 4 columns) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1: Turnkey Crusher Plant -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-1" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <!-- Authentic Site Photo Pill -->
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Turn-Key Plants</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Turn-Key Crusher Plant</h3>
+            <p class="text-xs text-slate-500 mb-4">Complete 100-500 TPH primary & secondary crushing stations.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="turnkey-crusher" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Turn-Key Project For Crusher Plant" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Hoist & Cranes -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-2" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Material Handling</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Industrial Hoist & Cranes</h3>
+            <p class="text-xs text-slate-500 mb-4">Heavy EOT cranes, wire rope drums & 14MT Hydra sets.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="hoist-crane" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Heavy Industrial Hoist & Crane Systems" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Vibrating Screens & Feeders -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-3" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Crushing & Sizing</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Incline Vibrating Screen 2YK</h3>
+            <p class="text-xs text-slate-500 mb-4">2YK Series circular vibrating screens and heavy vibro feeders.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="vibrating-screens" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Incline Vibrating Screen 2YK Series" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Coke-Oven Doors -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-4" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Coke Plant Systems</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Coke-Oven Doors & Seals</h3>
+            <p class="text-xs text-slate-500 mb-4">Precision heat-resistant fabricated doors, frames & knife-edge seals.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="coke-oven-doors" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Coke-oven Doors" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5: Conveyors, Drums & Idlers -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-5" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Bulk Handling</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Conveyors, Drums & Idlers</h3>
+            <p class="text-xs text-slate-500 mb-4">Drive & tail pulleys with rubber lagging and idler sets.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="conveyor-drums-idlers" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Conveyor Drums and Idlers" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6: Machined Shafts & Bushing -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-6" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Precision Engineering</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">16' Lathe & Shaft Turning</h3>
+            <p class="text-xs text-slate-500 mb-4">Up to 6-meter planed beds and 1.5m diameter turned flanges.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="precision-machining" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Precision Machining of Shafts & Bushes" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 7: ESP Chimneys & Ducting -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-7" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Environmental</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">ESP Chimneys & Ducting</h3>
+            <p class="text-xs text-slate-500 mb-4">High-temperature industrial ducting, expansion joints & bends.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="pollution-control-esp" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="ESP Chimneys & Ducting" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 8: Pig Casting Chains -->
+        <div class="catalog-card card-3d bg-slate-50/70 border border-slate-100 hover:border-amber-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all group">
+          <div class="relative mb-4">
+            <div id="cat-3d-8" class="w-full h-40 rounded-xl bg-white relative overflow-hidden flex items-center justify-center"></div>
+            <div class="absolute top-2 right-2 flex items-center gap-1 bg-slate-900/80 backdrop-blur px-2 py-0.5 rounded text-[10px] text-amber-400 font-semibold shadow-sm">
+              <i data-lucide="image" class="w-3 h-3"></i> Verified Photo
+            </div>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 block mb-1">Forging & Casting</span>
+            <h3 class="font-bold text-slate-900 text-base mb-1 group-hover:text-amber-600 transition-colors">Pig Casting Machine Chains</h3>
+            <p class="text-xs text-slate-500 mb-4">Heavy-duty alloy links, induction hardened pins and rollers.</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+            <button data-id="industrial-chains" class="inspect-product-btn text-xs font-bold text-slate-700 hover:text-amber-600 flex items-center gap-1">
+              <span>View Specs</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+            <button data-product="Fabricated & Forged Chains" class="open-enquiry-modal text-xs font-bold px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-sm">
+              Request Quote
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation Button -->
+      <div class="mt-12 text-center">
+        <a href="#showcase" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-slate-200 hover:border-slate-400 bg-white text-slate-800 text-sm font-bold shadow-sm hover:shadow transition-all">
+          <span>View Complete Equipment Showcase</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 text-amber-500"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. DARK ORDER SECTION (100% English & 3D Excavator + Golden Dust) -->
+  <!-- ========================================================================= -->
+  <section class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute top-1/2 -right-48 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left: Form & Call Pills -->
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 font-display">
+            Request Project Quotation
+          </h2>
+          <p class="text-slate-400 text-sm mb-6">
+            Call our engineering desk directly or submit your project drawings for immediate technical estimation:
+          </p>
+
+          <!-- Direct Phone Pills -->
+          <div class="flex flex-col sm:flex-row gap-3 mb-8">
+            <a href="tel:+919437000851" class="flex items-center gap-3 bg-slate-800/80 border border-slate-700 hover:border-amber-400 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-200 transition-colors">
+              <i data-lucide="phone-call" class="w-4 h-4 text-amber-400"></i>
+              <span>+91 94370 00851</span>
+            </a>
+            <a href="tel:+919437129593" class="flex items-center gap-3 bg-slate-800/80 border border-slate-700 hover:border-amber-400 px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-200 transition-colors">
+              <i data-lucide="phone-call" class="w-4 h-4 text-amber-400"></i>
+              <span>+91 94371 29593</span>
+            </a>
+          </div>
+
+          <!-- Dark Quick Enquiry Form -->
+          <form id="dark-quote-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-400 mb-1">Your Full Name *</label>
+                <input id="quote-name" name="name" type="text" data-validate="name" required placeholder="Enter full name" class="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-400 mb-1">Phone Number *</label>
+                <input id="quote-phone" name="phone" type="tel" data-validate="phone" required placeholder="+91 ..." class="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Email Address *</label>
+              <input id="quote-email" name="email" type="email" data-validate="email" required placeholder="company@domain.com" class="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Required Machinery / Fabrication Scope *</label>
+              <textarea id="quote-scope" name="scope" data-validate="scope" rows="3" required placeholder="Describe item, capacity, material grades, or project scope (min 10 characters)..." class="w-full bg-slate-800/90 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-all resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-yellow btn-magnetic py-4 rounded-xl text-base font-extrabold uppercase tracking-wider shadow-xl flex items-center justify-center gap-2">
+              <span>SUBMIT PROJECT ENQUIRY</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+            <p class="text-[11px] text-slate-500 text-center">
+              We respect your industrial privacy. Direct callback within 2 business hours.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right: 3D Heavy Excavator with Ground Dust Particles -->
+        <div class="lg:col-span-7 relative">
+          <div id="quote-3d-canvas-container" class="w-full h-[440px] sm:h-[480px] rounded-2xl relative">
+            <!-- 3D Canvas inserted by Three.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. TECHNICAL SHOWCASE (Featuring Verified Photos from trilokindustries.com) -->
+  <!-- ========================================================================= -->
+  <section id="showcase" class="py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-left mb-10">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display mb-3">
+          Technical Showcase & Equipment Specifications
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          Engineered assemblies with verified factory technical ratings, actual shop floor photographs, and industrial capacities.
+        </p>
+      </div>
+
+      <!-- Horizontal Category Selector Tabs -->
+      <div class="flex items-center gap-8 border-b border-slate-200 overflow-x-auto pb-4 mb-10 text-sm font-semibold text-slate-500">
+        <button class="spec-tab-btn active hover:text-slate-900 whitespace-nowrap" data-target="pane-crusher">
+          Turnkey Plants & Screens
+        </button>
+        <button class="spec-tab-btn hover:text-slate-900 whitespace-nowrap" data-target="pane-cranes">
+          Hoists & Cranes
+        </button>
+        <button class="spec-tab-btn hover:text-slate-900 whitespace-nowrap" data-target="pane-conveyors">
+          Conveyor Systems
+        </button>
+        <button class="spec-tab-btn hover:text-slate-900 whitespace-nowrap" data-target="pane-esp">
+          ESP & Ducting
+        </button>
+        <button class="spec-tab-btn hover:text-slate-900 whitespace-nowrap" data-target="pane-machining">
+          Precision Machining
+        </button>
+      </div>
+
+      <!-- Tab Content Panes -->
+      <!-- Pane 1: Turnkey Crusher Plants -->
+      <div id="pane-crusher" class="spec-pane active grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Item 1: Turnkey Crusher Plant -->
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/product_1_new.jpg" alt="Turnkey Stone Crusher Plant" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">100 - 500 TPH</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Turn-Key Crushing Plant</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Crusher Plant 350 TPH Complete</h3>
+
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600">
+                <span>Motor Power:</span>
+                <span class="font-bold text-slate-900">180 kW</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Feed Opening:</span>
+                <span class="font-bold text-slate-900">Up to 600 mm</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Screen Decks:</span>
+                <span class="font-bold text-slate-900">Triple Deck 2YK</span>
+              </div>
+            </div>
+          </div>
+          <button data-product="Crusher Plant 350 TPH Complete" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <!-- Item 2: Incline Vibrating Screen 2YK -->
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/product_image/Incline_Vibrating_Screen_2YK_Series_Crushing_Machine.jpg" alt="Incline Vibrating Screen 2YK Series" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">2YK Series</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Incline Vibrating Screen</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Circular Vibrating Screen 2YK-1848</h3>
+
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600">
+                <span>Motor Power:</span>
+                <span class="font-bold text-slate-900">22 kW Heavy Duty</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Deck Area:</span>
+                <span class="font-bold text-slate-900">1800 x 4800 mm</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Eccentric Shaft:</span>
+                <span class="font-bold text-slate-900">Forged Alloy Steel</span>
+              </div>
+            </div>
+          </div>
+          <button data-product="Circular Vibrating Screen 2YK-1848" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <!-- Item 3: Heavy Vibro Feeder / Vibrating Screen -->
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/vibrator.jpg" alt="Vibrating Screen Unit Trilok Industries" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">Nameplate Unit</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Factory Verified Unit</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Trilok High-Capacity Vibrator Screen</h3>
+
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600">
+                <span>Throughput:</span>
+                <span class="font-bold text-slate-900">300 TPH Mineral Sizing</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Trough Liner:</span>
+                <span class="font-bold text-slate-900">Sailhard / Hardox</span>
+              </div>
+              <div class="flex justify-between text-slate-600">
+                <span>Drive Type:</span>
+                <span class="font-bold text-slate-900">Unbalance Vibratory Motors</span>
+              </div>
+            </div>
+          </div>
+          <button data-product="Trilok High-Capacity Vibrator Screen" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+      </div>
+
+      <!-- Pane 2: Cranes -->
+      <div id="pane-cranes" class="spec-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/crane.jpg" alt="Industrial Hoist and Crane Unit" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">Overhead Unit</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Material Handling</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Electric Wire Rope Hoist & Crane</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Capacity:</span><span class="font-bold text-slate-900">Up to 50 MT</span></div>
+              <div class="flex justify-between text-slate-600"><span>Lift Height:</span><span class="font-bold text-slate-900">6 - 24 Meters</span></div>
+              <div class="flex justify-between text-slate-600"><span>Brakes:</span><span class="font-bold text-slate-900">Electromagnetic Failsafe</span></div>
+            </div>
+          </div>
+          <button data-product="Electric Wire Rope Hoist & Crane" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 relative overflow-hidden flex items-center justify-center">
+              <i data-lucide="truck" class="w-16 h-16 text-amber-500"></i>
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900 text-amber-400 text-[10px] font-bold">14 MT Escorts</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Pick & Carry Crane</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Mobile Hydra Crane 14 MT</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Capacity:</span><span class="font-bold text-slate-900">14 Metric Ton</span></div>
+              <div class="flex justify-between text-slate-600"><span>Boom Reach:</span><span class="font-bold text-slate-900">15.5 Meters</span></div>
+              <div class="flex justify-between text-slate-600"><span>Make:</span><span class="font-bold text-slate-900">Escorts Construction</span></div>
+            </div>
+          </div>
+          <button data-product="Mobile Hydra Crane 14 MT" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 relative overflow-hidden flex items-center justify-center">
+              <i data-lucide="crosshair" class="w-16 h-16 text-amber-500"></i>
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900 text-amber-400 text-[10px] font-bold">300m Line</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Heavy Rigging</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Electric Winch 05 MT</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Line Pull:</span><span class="font-bold text-slate-900">5 MT</span></div>
+              <div class="flex justify-between text-slate-600"><span>Rope Length:</span><span class="font-bold text-slate-900">300 Meters High Tensile</span></div>
+              <div class="flex justify-between text-slate-600"><span>Brake:</span><span class="font-bold text-slate-900">Electro-Hydraulic Thruster</span></div>
+            </div>
+          </div>
+          <button data-product="Electric Winch 05 MT" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+      </div>
+
+      <!-- Pane 3: Conveyor Systems -->
+      <div id="pane-conveyors" class="spec-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/product_1_new.jpg" alt="Conveyor gallery" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Drive Pulley</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Rubber Lagged Drive Drum 1200mm</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Shell Dia:</span><span class="font-bold text-slate-900">1,200 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Face Width:</span><span class="font-bold text-slate-900">1,600 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Lagging:</span><span class="font-bold text-slate-900">12mm Diamond Pattern</span></div>
+            </div>
+          </div>
+          <button data-product="Rubber Lagged Drive Drum 1200mm" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 flex items-center justify-center">
+              <i data-lucide="circle-dot" class="w-16 h-16 text-amber-500"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Carrying System</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Heavy Duty Troughing Idler Sets</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Belt Width:</span><span class="font-bold text-slate-900">650 to 2,000 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Trough Angle:</span><span class="font-bold text-slate-900">20°, 35°, 45°</span></div>
+              <div class="flex justify-between text-slate-600"><span>Sealing:</span><span class="font-bold text-slate-900">Triple Labyrinth Nylon</span></div>
+            </div>
+          </div>
+          <button data-product="Heavy Duty Troughing Idler Sets" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 flex items-center justify-center">
+              <i data-lucide="shield-alert" class="w-16 h-16 text-amber-500"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Chute Loading</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Rubber Disc Impact Rollers</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Impact Cushion:</span><span class="font-bold text-slate-900">Moulded Rubber Rings</span></div>
+              <div class="flex justify-between text-slate-600"><span>Shaft:</span><span class="font-bold text-slate-900">EN-8 Bright Steel Bar</span></div>
+              <div class="flex justify-between text-slate-600"><span>Standard:</span><span class="font-bold text-slate-900">IS: 8598 Certified</span></div>
+            </div>
+          </div>
+          <button data-product="Rubber Disc Impact Rollers" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+      </div>
+
+      <!-- Pane 4: ESP & Ducting -->
+      <div id="pane-esp" class="spec-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/product_1.jpg" alt="ESP Chimney Erection with Crane" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">Site Erection</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Industrial Stack & ESP</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">ESP Chimney Stack Erection</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Height:</span><span class="font-bold text-slate-900">30 to 75 Meters</span></div>
+              <div class="flex justify-between text-slate-600"><span>Gas Flow:</span><span class="font-bold text-slate-900">Up to 500,000 m³/hr</span></div>
+              <div class="flex justify-between text-slate-600"><span>Efficiency:</span><span class="font-bold text-slate-900">99.8% Certified</span></div>
+            </div>
+          </div>
+          <button data-product="ESP Chimney Stack Erection" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 flex items-center justify-center">
+              <i data-lucide="disc" class="w-16 h-16 text-amber-500"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">High-Temp Ducting</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Fabricated Expansion Joints & Bends</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Duct Dia:</span><span class="font-bold text-slate-900">400 to 3,500 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Plate Thickness:</span><span class="font-bold text-slate-900">6 to 25 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Weld Quality:</span><span class="font-bold text-slate-900">100% Radiography Tested</span></div>
+            </div>
+          </div>
+          <button data-product="Fabricated Expansion Joints" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-100 mb-5 flex items-center justify-center">
+              <i data-lucide="flame" class="w-16 h-16 text-amber-500"></i>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Casing Systems</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Multi-Cyclone Dust Collectors</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Temp Range:</span><span class="font-bold text-slate-900">Up to 450°C</span></div>
+              <div class="flex justify-between text-slate-600"><span>Material:</span><span class="font-bold text-slate-900">IS 2062 Gr. B / Corten</span></div>
+              <div class="flex justify-between text-slate-600"><span>Seals:</span><span class="font-bold text-slate-900">Ceramic Fiber / Inconel</span></div>
+            </div>
+          </div>
+          <button data-product="Multi-Cyclone Dust Collectors" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+      </div>
+
+      <!-- Pane 5: Machining -->
+      <div id="pane-machining" class="spec-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/images/infra_4.jpg" alt="Heavy Duty Centre Lathe" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">16' Lathe</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Heavy Turning</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">16' Heavy Duty Centre Lathe</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Max Shaft Dia:</span><span class="font-bold text-slate-900">650 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Max Length:</span><span class="font-bold text-slate-900">3.5 Meters</span></div>
+              <div class="flex justify-between text-slate-600"><span>Flange Turning:</span><span class="font-bold text-slate-900">Up to 1.5 Meters</span></div>
+            </div>
+          </div>
+          <button data-product="16' Heavy Duty Centre Lathe" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/product_image/Pyramid-Type-Plate-Bending-Machine.jpg" alt="Pyramid Plate Bending Machine" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">25mm Bending</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Forming Machinery</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Pyramid Plate Bending 25mm x 2.5m</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Max Thickness:</span><span class="font-bold text-slate-900">25 mm Plate</span></div>
+              <div class="flex justify-between text-slate-600"><span>Max Width:</span><span class="font-bold text-slate-900">2,500 mm</span></div>
+              <div class="flex justify-between text-slate-600"><span>Rolling Dia:</span><span class="font-bold text-slate-900">Up to 4.0 Meters</span></div>
+            </div>
+          </div>
+          <button data-product="Pyramid Plate Bending Machine" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+
+        <div class="card-3d bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="h-56 rounded-xl bg-slate-950 p-2 mb-5 relative overflow-hidden group flex items-center justify-center">
+              <img src="https://www.trilokindustries.com/product_image/radial-drilling-machine-50-mm.jpg" alt="Heavy Radial Drilling Machine" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-slate-900/90 text-amber-400 text-[10px] font-bold">50mm Radial</span>
+            </div>
+            <span class="text-xs font-bold text-amber-600 block mb-1">Heavy Drilling</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-4">Royal Radial Drilling 50mm</h3>
+            <div class="space-y-2 text-xs border-t border-slate-100 pt-4 mb-6">
+              <div class="flex justify-between text-slate-600"><span>Drilling Cap:</span><span class="font-bold text-slate-900">50 mm in Steel</span></div>
+              <div class="flex justify-between text-slate-600"><span>Arm Length:</span><span class="font-bold text-slate-900">1,500 mm Reach</span></div>
+              <div class="flex justify-between text-slate-600"><span>Make:</span><span class="font-bold text-slate-900">Royal Machineries</span></div>
+            </div>
+          </div>
+          <button data-product="Royal Radial Drilling 50mm" class="open-enquiry-modal btn-yellow w-full py-3 rounded-xl text-sm font-bold shadow">
+            REQUEST TECHNICAL ESTIMATE
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. AUTHENTIC EQUIPMENT GALLERY (From gallery.php) -->
+  <!-- ========================================================================= -->
+  <section id="gallery" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-1">Site & Workshop Evidence</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display">Original Equipment Gallery</h2>
+          <p class="text-slate-500 text-sm mt-1">High-resolution authentic field installations and machine tools from Trilok Industries' archives.</p>
+        </div>
+        <div class="text-xs font-semibold text-slate-500">
+          Showing 10 Verified Factory Photographs
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- Gallery 1: Crusher Site Installation -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/images/product_1_new.jpg" alt="Turnkey Stone Crusher Plant" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Turnkey Crusher Plant</h4>
+            <span class="text-[10px] text-slate-500 block">Site Installation</span>
+          </div>
+        </div>
+
+        <!-- Gallery 2: Lathe Machine -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/images/infra_4.jpg" alt="Centre Lathe Machine" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">16' Heavy Centre Lathe</h4>
+            <span class="text-[10px] text-slate-500 block">Shop Floor Machining</span>
+          </div>
+        </div>
+
+        <!-- Gallery 3: Shaper Machine -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/shaper-machine.jpg" alt="Industrial Shaper Machine" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">30" Shaper Machine</h4>
+            <span class="text-[10px] text-slate-500 block">Slot & Keyway Shaping</span>
+          </div>
+        </div>
+
+        <!-- Gallery 4: Thrust Roller Assembly -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/thrust_roller.jpg" alt="Thrust Roller Assembly" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Thrust Roller Assembly</h4>
+            <span class="text-[10px] text-slate-500 block">Cement & Kiln Spares</span>
+          </div>
+        </div>
+
+        <!-- Gallery 5: Pyramid Plate Bending -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/Pyramid-Type-Plate-Bending-Machine.jpg" alt="Pyramid Plate Bending" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Pyramid Plate Bending</h4>
+            <span class="text-[10px] text-slate-500 block">25mm Shell Rolling</span>
+          </div>
+        </div>
+
+        <!-- Gallery 6: Radial Drill -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/radial-drilling-machine-50-mm.jpg" alt="Radial Drilling Machine" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Radial Drill 50mm</h4>
+            <span class="text-[10px] text-slate-500 block">Heavy Boring Arm</span>
+          </div>
+        </div>
+
+        <!-- Gallery 7: YK Circular Screen -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/YK_circular_vibrating_screen_machine_with_double.jpg" alt="YK Circular Screen" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">YK Circular Screen</h4>
+            <span class="text-[10px] text-slate-500 block">Aggregate Gradation</span>
+          </div>
+        </div>
+
+        <!-- Gallery 8: Incline 2YK Screen -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/product_image/Incline_Vibrating_Screen_2YK_Series_Crushing_Machine.jpg" alt="Incline Screen 2YK" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Incline Screen 2YK</h4>
+            <span class="text-[10px] text-slate-500 block">Double Deck Mesh</span>
+          </div>
+        </div>
+
+        <!-- Gallery 9: Screen with Nameplate -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/images/vibrator.jpg" alt="Screen with Nameplate" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">Screen with Nameplate</h4>
+            <span class="text-[10px] text-slate-500 block">Trilok Industries Tag</span>
+          </div>
+        </div>
+
+        <!-- Gallery 10: ESP Chimney Erection -->
+        <div class="card-3d bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden group cursor-pointer p-2">
+          <div class="h-48 overflow-hidden relative bg-slate-950 p-2 flex items-center justify-center rounded-xl">
+            <img src="https://www.trilokindustries.com/images/product_1.jpg" alt="ESP Chimney Erection" class="max-h-full max-w-full object-contain mx-auto group-hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="p-3">
+            <h4 class="text-xs font-bold text-slate-900 truncate">ESP Chimney Erection</h4>
+            <span class="text-[10px] text-slate-500 block">Boom Crane Erection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. WHY CHOOSE US (100% English) -->
+  <!-- ========================================================================= -->
+  <section id="about" class="py-24 bg-slate-50 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-left mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display mb-3">
+          Why Trilok Industries?
+        </h2>
+        <p class="text-slate-500 text-sm sm:text-base">
+          Four decades of uncompromising fabrication quality, certified precision and deep client trust.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="card-3d p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400/50 transition-all shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">44+ Years of Proven Excellence</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Established in 1980 in the industrial capital of Rourkela, holding continuous DSSIA membership and statutory credentials since 1996.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card-3d p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400/50 transition-all shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">28+ Workshop Machine Tools</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Unrivaled in-house capability: 20ft Planer with double milling head, 16ft heavy lathes, 25mm plate bending machines & 14MT Hydra cranes.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card-3d p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400/50 transition-all shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Approved by Major Steel Plants</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Registered supplier to Rourkela Steel Plant (RSP Regn: PUR/REGN/7272/SSI/328) with regular supplies to SAIL, L&T, UltraTech & Cethar Vessels.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card-3d p-6 rounded-2xl bg-white border border-slate-200 hover:border-amber-400/50 transition-all shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
+            <i data-lucide="file-check-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Complete Statutory Transparency</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Fully audited compliance: PAN (AADFT3811H), TIN (21042000844), ECC, ESIC, EPF, and institutional banking with SBI & ICICI Bank Rourkela.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. INFRASTRUCTURE & WORKSHOP INVENTORY (29 Machines + Real Photos) -->
+  <!-- ========================================================================= -->
+  <section id="infrastructure" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-1">Factory Floor Equipment</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-display">Workshop Infrastructure</h2>
+          <p class="text-slate-500 text-sm mt-1">Complete certified machinery inventory at B/15 Industrial Estate, Kalunga.</p>
+        </div>
+        
+        <!-- Live Search & Count Badge -->
+        <div class="flex items-center gap-3">
+          <span id="infra-count-badge" class="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold">29 Machines Listed</span>
+          <div class="relative w-64">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3"></i>
+            <input id="infra-search-input" type="text" placeholder="Filter machine or make..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl text-xs text-slate-900 placeholder-slate-400 outline-none shadow-sm">
+          </div>
+        </div>
+      </div>
+
+      <!-- Infrastructure Table -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-slate-200 text-xs uppercase tracking-wider">
+                <th class="py-3.5 px-4 font-bold">Sl.</th>
+                <th class="py-3.5 px-4 font-bold">Photo</th>
+                <th class="py-3.5 px-4 font-bold">Machine Description</th>
+                <th class="py-3.5 px-4 font-bold">Capacity / Dimensions</th>
+                <th class="py-3.5 px-4 font-bold">Make</th>
+                <th class="py-3.5 px-4 font-bold">Quantity</th>
+              </tr>
+            </thead>
+            <tbody id="infra-table-body" class="text-sm divide-y divide-slate-100">
+              <!-- Dynamically populated from TRILOK_DATA.infrastructure -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. CLIENT PORTFOLIO (With Authentic Client Logos) -->
+  <!-- ========================================================================= -->
+  <section id="clients" class="py-20 bg-slate-50 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-1">Trusted Collaborators</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 font-display">Major Client Portfolio</h2>
+        <p class="text-slate-500 text-sm mt-2">Supplying critical engineering fabrications to India's premier industrial conglomerates.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- UltraTech -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/ultratech.jpg" alt="UltraTech Cement" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">UltraTech Cement</span>
+          <span class="text-[10px] text-slate-500">Aditya Birla Group</span>
+        </div>
+        <!-- L&T -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/larsen-tubro.jpg" alt="Larsen & Toubro" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">Larsen & Toubro</span>
+          <span class="text-[10px] text-slate-500">L&T Heavy Eng.</span>
+        </div>
+        <!-- Cethar -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/cethar-logo.jpg" alt="Cethar Vessels" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">Cethar Vessels</span>
+          <span class="text-[10px] text-slate-500">Power & Boilers</span>
+        </div>
+        <!-- Ecomak -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/ecomak.jpg" alt="Ecomak Systems" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">Ecomak Systems</span>
+          <span class="text-[10px] text-slate-500">Air Pollution ESP</span>
+        </div>
+        <!-- Viraj -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/viraj.jpg" alt="Viraj Profiles" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">Viraj Profiles</span>
+          <span class="text-[10px] text-slate-500">Stainless Steel</span>
+        </div>
+        <!-- SGM -->
+        <div class="card-3d p-4 rounded-xl border border-slate-200 bg-white flex flex-col items-center justify-center text-center hover:border-amber-400 transition-all shadow-sm">
+          <img src="https://www.trilokindustries.com/images/ganesh-metalicks.jpg" alt="Shree Ganesh Metaliks" class="h-10 object-contain mb-3">
+          <span class="text-xs font-bold text-slate-900">Shree Ganesh Metaliks</span>
+          <span class="text-[10px] text-slate-500">SGM Sponge Iron</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. QUALITY ASSURANCE STANDARDS -->
+  <!-- ========================================================================= -->
+  <section id="quality" class="py-20 bg-slate-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-1">Rigorous Engineering Assurance</span>
+        <h2 class="text-3xl font-extrabold text-white font-display">Quality Policy & Inspection Protocol</h2>
+        <p class="text-slate-400 text-sm mt-2">Upgraded beyond standards with 100% NDT inspection, ultrasonic testing and full load trials.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="card-3d p-6 rounded-2xl bg-slate-800/80 border border-slate-700">
+          <div class="text-amber-400 font-bold text-xl mb-2">01</div>
+          <h3 class="font-bold text-white text-base mb-2">Metallurgical Validation</h3>
+          <p class="text-xs text-slate-400">Chemical and physical analysis of steel plates and forgings procured exclusively from SAIL, Tata and Jindal.</p>
+        </div>
+        <div class="card-3d p-6 rounded-2xl bg-slate-800/80 border border-slate-700">
+          <div class="text-amber-400 font-bold text-xl mb-2">02</div>
+          <h3 class="font-bold text-white text-base mb-2">NDT & Weld Testing</h3>
+          <p class="text-xs text-slate-400">Dye Penetrant Testing (DPT), Magnetic Particle, and Ultrasonic Test (UT) performed to AWS D1.1 specifications.</p>
+        </div>
+        <div class="card-3d p-6 rounded-2xl bg-slate-800/80 border border-slate-700">
+          <div class="text-amber-400 font-bold text-xl mb-2">03</div>
+          <h3 class="font-bold text-white text-base mb-2">Precision Tolerances</h3>
+          <p class="text-xs text-slate-400">Laser run-out calibration and dial-gauge concentricity tests within ±0.02mm for all mill shafts and bearings.</p>
+        </div>
+        <div class="card-3d p-6 rounded-2xl bg-slate-800/80 border border-slate-700">
+          <div class="text-amber-400 font-bold text-xl mb-2">04</div>
+          <h3 class="font-bold text-white text-base mb-2">Dynamic Balancing & Trials</h3>
+          <p class="text-xs text-slate-400">Full dynamic balancing of conveyor drums, flywheels, and proof-load testing of cranes up to 125% rated capacity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 10. CONTACT US & STATUTORY DETAILS (Full authentic details) -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Contact Information -->
+        <div class="lg:col-span-5">
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-1">Get In Touch</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 font-display mb-6">Contact Works & Office</h2>
+          
+          <div class="space-y-6 text-sm text-slate-700">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <strong class="block text-slate-900 font-bold">Office & Works:</strong>
+                <p class="text-slate-600">B/15, Industrial Estate, Kalunga</p>
+                <p class="text-slate-600">PO: Kalunga - 770031, District: Sundargarh, Orissa, India</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <strong class="block text-slate-900 font-bold">Person In Charge:</strong>
+                <p class="text-slate-600">T.K. TRIPATHY (MOHAN), Managing Partner</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <strong class="block text-slate-900 font-bold">Telephone & Mobile:</strong>
+                <p class="text-slate-600">Phone: 0661-2660002, 0661-2503614</p>
+                <p class="text-slate-600">Mobile: +91 94370 00851, +91 94371 29593</p>
+                <p class="text-slate-600">Fax: 0661-2660002</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-1">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <strong class="block text-slate-900 font-bold">Official Emails:</strong>
+                <p class="text-slate-600">trilok_rkl@yahoo.com</p>
+                <p class="text-slate-600">info@trilokindustries.com</p>
+                <p class="text-slate-600">trilok_rkl@trilokindustries.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Statutory Badges Box -->
+          <div class="mt-8 p-5 bg-slate-50 rounded-2xl border border-slate-200 text-xs">
+            <span class="font-bold text-slate-900 block mb-2 uppercase tracking-wide">Statutory Registration Numbers</span>
+            <div class="grid grid-cols-2 gap-2 text-slate-600">
+              <div><strong class="text-slate-900">PAN:</strong> AADFT3811H</div>
+              <div><strong class="text-slate-900">TIN:</strong> 21042000844</div>
+              <div><strong class="text-slate-900">ECC:</strong> AADFT3811HEM002</div>
+              <div><strong class="text-slate-900">Service Tax:</strong> AADFT3811HSD001</div>
+              <div><strong class="text-slate-900">ESIC:</strong> 44000034150000606</div>
+              <div><strong class="text-slate-900">EPF:</strong> OR/RL/9671</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dedicated Project Enquiry Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2 font-display">Dedicated Project Enquiry</h3>
+            <p class="text-slate-500 text-sm mb-6">Fill in the authentic enquiry fields below to submit your drawings or RFQ directly to our team:</p>
+
+            <form id="sidebar-enquiry-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Your Full Name: *</label>
+                  <input id="sidebar-name" name="name" type="text" data-validate="name" required placeholder="Enter full name" class="w-full bg-white border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition-all">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number: *</label>
+                  <input id="sidebar-phone" name="phone" type="tel" data-validate="phone" required placeholder="+91 ..." class="w-full bg-white border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Email Address: *</label>
+                <input id="sidebar-email" name="email" type="email" data-validate="email" required placeholder="company@domain.com" class="w-full bg-white border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition-all">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Enquiry Specifications: *</label>
+                <textarea id="sidebar-specs" name="specs" data-validate="scope" rows="4" required placeholder="Provide details of your required products, fabrication dimensions or services (min 10 characters)..." class="w-full bg-white border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-slate-900 outline-none transition-all resize-none"></textarea>
+              </div>
+
+              <!-- Security Code field matching enquiry.php -->
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Security Code: *</label>
+                <div class="flex items-center gap-3">
+                  <div class="px-4 py-2 bg-slate-200 text-slate-800 font-mono font-bold tracking-widest rounded-lg select-none">
+                    TK7289
+                  </div>
+                  <input id="security-code-input" name="security-code" data-validate="security-code" type="text" required placeholder="Type the code above" class="w-48 bg-white border border-slate-200 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none transition-all">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-yellow btn-magnetic w-full py-4 rounded-xl text-base font-extrabold uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 mt-4">
+                <span>Submit Project Enquiry</span>
+                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================================= -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="https://www.trilokindustries.com/images/Trilok-Industries_04.jpg" 
+               alt="Trilok Industries Logo" 
+               class="h-12 w-auto object-contain rounded bg-white p-1" />
+          <div>
+            <span class="text-sm font-bold text-white block">M/s. TRILOK INDUSTRIES</span>
+            <span class="text-slate-500">Mechanical Engineers & Fabricators | Estd. 1980</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400">
+          <a href="#home" class="hover:text-amber-400 transition-colors">Home</a>
+          <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+          <a href="#products" class="hover:text-amber-400 transition-colors">Products</a>
+          <a href="#gallery" class="hover:text-amber-400 transition-colors">Gallery</a>
+          <a href="#infrastructure" class="hover:text-amber-400 transition-colors">Infrastructure</a>
+          <a href="#quality" class="hover:text-amber-400 transition-colors">Quality</a>
+          <a href="#clients" class="hover:text-amber-400 transition-colors">Clients</a>
+          <a href="#contact" class="hover:text-amber-400 transition-colors">Contact Us</a>
+        </div>
+
+        <div class="text-center md:text-right text-slate-500">
+          <p>© 2026 Trilok Industries. All Rights Reserved.</p>
+          <p class="text-[11px] text-slate-600 mt-1">Originally Powered by Hi Technology & Services | Modernized with Interactive 3D WebGL</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODALS -->
+  <!-- ========================================================================= -->
+  <!-- 1. Interactive Enquiry Modal -->
+  <div id="enquiry-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative border border-slate-100">
+      <button class="close-modal absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">M/s. Trilok Industries</span>
+      <h3 class="text-2xl font-bold text-slate-900 font-display mb-1">Project Enquiry & Quotation</h3>
+      <p class="text-xs text-slate-500 mb-6">Direct communication channel to Managing Partner T.K. Tripathy (Mohan).</p>
+
+      <form id="modal-enquiry-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Subject / Product Interest</label>
+          <input id="modal-enquiry-subject" name="subject" data-validate="subject" type="text" placeholder="General Industrial Enquiry" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Your Name: *</label>
+            <input id="modal-name" name="name" data-validate="name" type="text" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Phone Number: *</label>
+            <input id="modal-phone" name="phone" data-validate="phone" type="tel" required placeholder="+91 ..." class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Email Address: *</label>
+          <input id="modal-email" name="email" data-validate="email" type="email" required placeholder="company@domain.com" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Enquiry Specifications: *</label>
+          <textarea id="modal-specs" name="specs" data-validate="scope" rows="3" required placeholder="Specifications, capacity, material grades (min 10 characters)..." class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-4 py-2.5 text-sm text-slate-900 outline-none resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="btn-yellow btn-magnetic w-full py-3.5 rounded-xl text-sm font-extrabold uppercase tracking-wider shadow-md flex items-center justify-center gap-2">
+          <span>Transmit Project Enquiry</span>
+          <i data-lucide="send" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Product Detail Specs Modal (With Authentic Photograph Display) -->
+  <div id="product-detail-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full p-8 shadow-2xl relative border border-slate-100 max-h-[90vh] overflow-y-auto">
+      <button class="close-modal absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <span id="modal-product-category" class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1"></span>
+      <h3 id="modal-product-title" class="text-2xl font-bold text-slate-900 font-display mb-2"></h3>
+      <p id="modal-product-desc" class="text-sm text-slate-600 mb-4"></p>
+
+      <!-- Authentic Machine Photograph Container -->
+      <div class="mb-6 rounded-2xl overflow-hidden border border-slate-200 bg-slate-950 p-2 relative flex items-center justify-center">
+        <img id="modal-product-image" src="" alt="Authentic Machine Photograph" class="max-h-80 max-w-full object-contain mx-auto">
+        <div class="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur px-3 py-1 rounded-lg text-xs font-semibold text-amber-400 flex items-center gap-1.5 shadow">
+          <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+          <span>Authentic Factory / Site Photograph from Trilok Industries</span>
+        </div>
+      </div>
+
+      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Technical Specifications</h4>
+      <div id="modal-product-specs" class="bg-slate-50 rounded-2xl p-4 border border-slate-100 mb-6 space-y-1"></div>
+
+      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Engineering Highlights</h4>
+      <ul id="modal-product-features" class="space-y-2 mb-8"></ul>
+
+      <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+        <button class="close-modal px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold text-slate-700 hover:bg-slate-50">
+          Close
+        </button>
+        <button id="modal-product-quote-cta" class="open-enquiry-modal btn-yellow px-6 py-2.5 rounded-xl text-sm font-bold shadow flex items-center gap-2">
+          <span>Request Detailed Estimate</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Application Logic -->
+  <script src="js/data.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/models3d.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+</html>
